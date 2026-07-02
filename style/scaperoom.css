@@ -1,0 +1,864 @@
+@font-face {
+    font-family: "MiFuente";
+    src: url("../font/MiFuente.ttf") format("truetype");
+}
+
+body {
+    background: radial-gradient(#577689, #0A1E2A);
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    font-family: "MiFuente", sans-serif;
+}
+
+.jugar {
+    width: 450px;
+    height: 100px;
+    position: absolute;
+    left: 710px;
+    top: 665px;
+    cursor: pointer;
+}
+
+main {
+    position: relative;
+}
+
+.principal {
+    width: 99%;
+    height: 850px;
+    background-image: url('../img/portada.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    border: 10px solid #091C28;
+    position: relative;
+    justify-self: center;
+}
+
+.narrador {
+    display: none;
+    width: 450px;
+    height: 650px;
+    position: relative;
+    background-image: url('../img/narrador.png');
+    background-size: cover;
+    justify-self: center;
+    margin-top: 100px;
+}
+
+.pie {
+    display: none;
+    font-size: 45px;
+    width: 72.5%;
+    height: 180px;
+    position: absolute;
+    background-color: #091C28;
+    top: 840px;
+    border-radius: 20px;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+}
+
+footer p {
+    margin: 0;
+    color: #3B596C;
+}
+
+.vidas {
+    display: none;
+    background-image: url('../img/vidas6.png');
+    background-size: cover;
+    position: absolute;
+    width: 425px;
+    height: 60px;
+    left: 1470px;
+    top: 140px;
+}
+
+.tituloMapa {
+    display: none;
+    position: absolute;
+    width: 425px;
+    height: 100px;
+    left: 1465px;
+    top: 10px;
+    background-color: #577689;
+    color: #0A1E2A;
+    border-radius: 20px;
+    font-size: 30px;
+    text-align: center;
+    align-content: center;
+    border: 7px solid #0A1E2A;
+}
+
+.escenaAnterior {
+    display: none;
+    background-color: #091C28;
+    width: 425px;
+    height: 220px;
+    position: absolute;
+    left: 1475px;
+    top: 840px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.escenaAnterior p {
+    color: #3B596C;
+}
+
+.flechaAtras {
+    width: 100px;
+    height: 100px;
+    background-image: url('../img/flecha1.png');
+    background-image: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-position: center;
+    left: 70px;
+    bottom: 15px;
+}
+
+.imagenAtras {
+    display: block;
+    width: 130px;
+    height: 87px;
+    background-image: url('../img/escenarios/1_ciudadSonidoReducida.png');
+    background-image: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-position: center;
+    left: 200px;
+    bottom: 25px;
+    border-radius: 20px;
+}
+
+.ciudadSilencio {
+    display: none;
+    width: 80px;
+    height: 70px;
+    background-color: transparent;
+    position: absolute;
+    left: 950px;
+    top: 530px;
+    cursor: pointer;
+}
+
+.umbral {
+    display: none;
+    width: 100px;
+    height: 150px;
+    background-color: transparent;
+    position: absolute;
+    left: 650px;
+    top: 350px;
+    cursor: pointer;
+}
+
+.metronomo1,
+.metronomo2,
+.metronomo3 {
+    display: none;
+    background-image: url('../img/metronomoBien.png');
+    width: 200px;
+    height: 250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    cursor: pointer;
+}
+
+.aguja1,
+.aguja2,
+.aguja3 {
+    display: none;
+    background-image: url('../img/agujaBien.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    cursor: pointer;
+}
+
+.metronomo1 {
+    left: 250px;
+    top: 400px;
+}
+
+.metronomo2 {
+    left: 550px;
+    top: 150px;
+}
+
+.metronomo3 {
+    left: 850px;
+    top: 400px;
+}
+
+.aguja1 {
+    left: 263px;
+    top: 350px;
+    transform-origin: bottom center;
+    animation: moverAguja1 0.3s linear infinite alternate;
+}
+
+@keyframes moverAguja1 {
+    0% {
+        transform: rotate(-30deg);
+    }
+
+    100% {
+        transform: rotate(30deg);
+    }
+}
+
+.aguja2 {
+    left: 563px;
+    top: 100px;
+    transform-origin: bottom center;
+    animation: moverAguja2 0.5s linear infinite alternate;
+}
+
+@keyframes moverAguja2 {
+    0% {
+        transform: rotate(-30deg);
+    }
+
+    100% {
+        transform: rotate(30deg);
+    }
+}
+
+.aguja3 {
+    left: 863px;
+    top: 350px;
+    transform-origin: bottom center;
+    animation: moverAguja3 0.35s linear infinite alternate;
+}
+
+@keyframes moverAguja3 {
+    0% {
+        transform: rotate(-30deg);
+    }
+
+    100% {
+        transform: rotate(30deg);
+    }
+}
+
+.reproducirMetronomo {
+    font-family: "MiFuente", sans-serif;
+    font-size: 20px;
+    display: none;
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    left: 1200px;
+    top: 15px;
+    border-radius: 30px;
+    background-color: #373050;
+    color: #6B5C7D;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    border: 0;
+}
+
+.teatro {
+    display: none;
+}
+
+.btn0,
+.btn1,
+.btn2,
+.btn3 {
+    transition: all 0.2s;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    background: transparent;
+    border: 0px;
+}
+
+.btn0 {
+    width: 55px;
+    height: 65px;
+    left: 840px;
+    top: 300px;
+    border-radius: 10px;
+}
+
+.btn1 {
+    width: 55px;
+    height: 65px;
+    left: 530px;
+    top: 390px;
+    border-radius: 10px;
+}
+
+.btn2 {
+    width: 55px;
+    height: 65px;
+    left: 650px;
+    top: 320px;
+    border-radius: 10px;
+}
+
+.btn3 {
+    width: 50px;
+    height: 60px;
+    left: 690px;
+    top: 435px;
+    border-radius: 10px;
+}
+
+.btn0:hover {
+    background-image: url('../img/nota1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scale(1.05);
+    background-color: #113053;
+}
+
+.btn1:hover {
+    background-image: url('../img/nota3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scale(1.05);
+    background-color: #113053;
+}
+
+.btn2:hover {
+    background-image: url('../img/nota4.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scale(1.05);
+    background-color: #113053;
+}
+
+.btn3:hover {
+    background-image: url('../img/nota2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scale(1.05);
+    background-color: #113053;
+}
+
+.pistaNotas {
+    display: none;
+    position: absolute;
+    left: 1025px;
+    top: 10px;
+    width: 375px;
+    height: 200px;
+    background-color: #113053;
+    color: #6B90A5;
+    border-radius: 20px;
+    text-align: center;
+    align-content: center;
+    font-size: 20px;
+}
+
+.telon {
+    display: none;
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    top: 210px;
+    left: 500px;
+    cursor: pointer;
+}
+
+.cancionesOlvidadas {
+    display: none;
+}
+
+.libro1,
+.libro2,
+.libro3,
+.libro4,
+.libro5 {
+    display: none;
+}
+
+.libro1 {
+    width: 265px;
+    height: 100px;
+    position: absolute;
+    top: 655px;
+    left: 1140px;
+}
+
+.libro1:hover {
+    background-image: url('../img/libro1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scale(1);
+    border-radius: 20px;
+}
+
+.libro2 {
+    width: 40px;
+    height: 60px;
+    position: absolute;
+    left: 500px;
+    top: 420px;
+}
+
+.libro2:hover {
+    background-image: url('../img/libro2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scale(1.3);
+    border-radius: 20px;
+}
+
+.libro3 {
+    width: 130px;
+    height: 75px;
+    position: absolute;
+    left: 775px;
+    top: 520px;
+}
+
+.libro3:hover {
+    background-image: url('../img/libro3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scale(0.9);
+    border-radius: 20px;
+}
+
+.libro4 {
+    width: 40px;
+    height: 55px;
+    position: absolute;
+    left: 180px;
+    top: 335px;
+}
+
+.libro4:hover {
+    background-image: url('../img/libro4.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scale(1.5);
+    border-radius: 20px;
+}
+
+.libro5 {
+    width: 95px;
+    height: 40px;
+    position: absolute;
+    left: 320px;
+    top: 660px;
+}
+
+.libro5:hover {
+    background-image: url('../img/libro5.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scale(1.1);
+    border-radius: 20px;
+}
+
+.flecha {
+    display: none;
+    background-image: url('../img/flecha5.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: none;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: 50px;
+    top: 600px;
+}
+
+.pistaLibro {
+    display: none;
+    width: 800px;
+    height: 500px;
+    position: absolute;
+    left: 320px;
+    top: 300px;
+    color: #4E5F5A;
+    font-size: 60px;
+    text-align: center;
+}
+
+.comprobarPalabra {
+    font-family: "MiFuente", sans-serif;
+    font-size: 20px;
+    display: none;
+    position: absolute;
+    width: 350px;
+    height: 100px;
+    left: 1050px;
+    top: 10px;
+    border-radius: 30px;
+    background-color: #111B26;
+    color: #4E5F5A;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+.palabraSecreta {
+    display: none;
+    width: 300px;
+    height: 40px;
+    border: 0;
+    margin-top: 5px;
+    border-radius: 20px;
+    background-color: #4E5F5A;
+    margin-left: 20px;
+}
+
+.partitura {
+    display: none;
+    position: absolute;
+    width: 200px;
+    height: 75px;
+    top: 525px;
+    left: 600px;
+}
+
+.partitura:hover {
+    box-shadow: 0 0 12px rgba(255, 255, 255, 1);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.empezarQuiz {
+    display: none;
+    width: 300px;
+    height: 100px;
+    position: absolute;
+    left: 550px;
+    top: 425px;
+    cursor: pointer;
+}
+
+.quiz {
+    display: none;
+    grid-template-rows: 1fr 2fr;
+    height: 900px;
+    width: 1300px;
+    margin: auto;
+}
+
+.preguntaQuiz {
+    justify-items: center;
+    position: absolute;
+    top: 50px;
+    left: 200px;
+}
+
+.pregunta {
+    font-size: 30px;
+    background-color: #14241F;
+    height: 200px;
+    width: 1000px;
+    text-align: center;
+    align-content: center;
+    border-radius: 40px;
+    color: #416A27;
+    border: 5px solid #416A27;
+}
+
+.respuestasQuiz {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.respuesta1,
+.respuesta2,
+.respuesta3,
+.respuesta4 {
+    font-family: MiFuente;
+    background-color: #14241F;
+    width: 425px;
+    height: 150px;
+    text-align: center;
+    align-content: center;
+    border-radius: 40px;
+    position: absolute;
+    border: 0;
+    color: #416A27;
+    font-size: 30px;
+    border: 5px solid #416A27;
+}
+
+.respuesta1:hover,
+.respuesta2:hover,
+.respuesta3:hover,
+.respuesta4:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.respuesta1 {
+    left: 250px;
+    top: 310px;
+}
+
+.respuesta2 {
+    left: 735px;
+    top: 310px;
+}
+
+.respuesta3 {
+    left: 250px;
+    top: 500px;
+}
+
+.respuesta4 {
+    left: 735px;
+    top: 500px;
+}
+
+.instrumento1 {
+    cursor: pointer;
+    display: none;
+    height: 125px;
+    width: 75px;
+    position: absolute;
+    left: 875px;
+    top: 475px;
+}
+
+.instrumento2 {
+    cursor: pointer;
+    display: none;
+    height: 250px;
+    width: 90px;
+    position: absolute;
+    left: 1200px;
+    top: 390px;
+}
+
+.instrumento3 {
+    cursor: pointer;
+    display: none;
+    height: 225px;
+    width: 125px;
+    position: absolute;
+    left: 1025px;
+    top: 450px;
+}
+
+.afinar {
+    display: none;
+    width: 400px;
+    position: absolute;
+    top: 350px;
+    left: 500px;
+}
+
+.puertaArmonica {
+    display: none;
+    width: 75px;
+    height: 400px;
+    position: absolute;
+    top: 180px;
+    left: 1090px;
+    cursor: pointer;
+}
+
+.tiempo {
+    display: none;
+}
+
+.tiempo button {
+    display: none;
+    position: absolute;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: transparent;
+}
+
+.boton0 {
+    width: 70px;
+    height: 70px;
+    top: 90px;
+    left: 1010px;
+    order: 1;
+}
+
+.boton1 {
+    width: 90px;
+    height: 90px;
+    top: 210px;
+    left: 352px;
+    order: 2;
+}
+
+.boton2 {
+    width: 55px;
+    height: 55px;
+    top: 330px;
+    left: 835px;
+    order: 3;
+}
+
+.boton3 {
+    width: 140px;
+    height: 140px;
+    top: 105px;
+    left: 640px;
+    order: 4;
+}
+
+.boton0:hover,
+.boton1:hover,
+.boton2:hover,
+.boton3:hover,
+.boton0.activo,
+.boton1.activo,
+.boton2.activo,
+.boton3.activo {
+    background-color: #0E1221;
+    transform: scale(1.2);
+}
+
+.decisionFinal {
+    display: none;
+    width: 600px;
+    height: 300px;
+    background-color: #143860;
+    position: absolute;
+    top: 250px;
+    left: 1200px;
+    border-radius: 100px;
+    justify-items: center;
+    font-size: 30px;
+}
+
+.decisionFinal p {
+    margin-top: 60px;
+    color: #3592BA;
+    text-align: center;
+}
+
+.botonMalo {
+    display: none;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    left: 100px;
+    background-color: #3592BA;
+    border: 0;
+}
+
+.botonBueno {
+    display: none;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    left: 400px;
+    background-color: #3592BA;
+    border: 0;
+}
+
+.piano {
+    display: none;
+    width: 425px;
+    height: 300px;
+    position: absolute;
+    left: 500px;
+    top: 400px;
+    cursor: pointer;
+}
+
+.teclas {
+    display: none;
+}
+
+.do {
+    display: none;
+    width: 225px;
+    height: 345px;
+    position: absolute;
+    top: 455px;
+    left: 60px;
+}
+
+.re {
+    display: none;
+    width: 125px;
+    height: 450px;
+    position: absolute;
+    left: 1175px;
+}
+
+.mi {
+    display: none;
+    width: 225px;
+    height: 345px;
+    position: absolute;
+    left: 535px;
+    top: 455px;
+}
+
+.fa {
+    display: none;
+    width: 130px;
+    height: 450px;
+    position: absolute;
+    left: 455px;
+}
+
+.sol {
+    display: none;
+    width: 225px;
+    height: 345px;
+    position: absolute;
+    left: 1010px;
+    top: 455px;
+}
+
+.la {
+    display: none;
+    width: 125px;
+    height: 450px;
+    position: absolute;
+    left: 225px;
+}
+
+.si {
+    display: none;
+    width: 125px;
+    height: 450px;
+    position: absolute;
+    left: 940px;
+}
+
+.reiniciar {
+    display: none;
+    width: 470px;
+    height: 125px;
+    position: absolute;
+    top: 650px;
+    left: 700px;
+}
